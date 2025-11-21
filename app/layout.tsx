@@ -1,15 +1,16 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import Header from './components/Header'
-import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://uwpsaintlucia.org'),
   title: 'UWP 2025 Manifesto: Reclaiming Our Future',
-  description: 'United Workers Party 2025 Manifesto - A transformative agenda for rebuilding trust, restoring confidence, and renewing hope for Saint Lucia.',
-  keywords: 'United Workers Party, UWP, Manifesto 2025, Saint Lucia, Politics, Allen Chastanet, Election, Government, Policy',
+  description:
+    'United Workers Party 2025 Manifesto - A transformative agenda for rebuilding trust, restoring confidence, and renewing hope for Saint Lucia.',
+  keywords:
+    'United Workers Party, UWP, Manifesto 2025, Saint Lucia, Politics, Allen Chastanet, Election, Government, Policy',
   authors: [{ name: 'United Workers Party' }],
   openGraph: {
     type: 'website',
@@ -17,7 +18,8 @@ export const metadata: Metadata = {
     url: 'https://uwpsaintlucia.org',
     siteName: 'United Workers Party',
     title: 'UWP 2025 Manifesto: Reclaiming Our Future',
-    description: 'A transformative agenda for rebuilding trust, restoring confidence, and renewing hope for Saint Lucia.',
+    description:
+      'A transformative agenda for rebuilding trust, restoring confidence, and renewing hope for Saint Lucia.',
     images: [
       {
         url: '/images/hero-background.jpg',
@@ -32,7 +34,8 @@ export const metadata: Metadata = {
     site: '@uwpsaintlucia',
     creator: '@uwpsaintlucia',
     title: 'UWP 2025 Manifesto: Reclaiming Our Future',
-    description: 'A transformative agenda for rebuilding trust, restoring confidence, and renewing hope for Saint Lucia.',
+    description:
+      'A transformative agenda for rebuilding trust, restoring confidence, and renewing hope for Saint Lucia.',
     images: ['/images/hero-background.jpg'],
   },
 }
@@ -52,8 +55,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        {/* jQuery - Required for flipbook plugin */}
+      <head>{/* jQuery - Required for flipbook plugin */}</head>
+      <body>
+        <Header />
+        <div className="pt-[72px]">{children}</div>
+        {/* <Footer /> */}
+        <ScrollToTop />
         <Script
           src="https://code.jquery.com/jquery-3.6.0.min.js"
           strategy="beforeInteractive"
@@ -73,12 +80,6 @@ export default function RootLayout({
           src="/flipbook/js/flipbook.min.js"
           strategy="beforeInteractive"
         />
-      </head>
-      <body>
-        <Header />
-        <div className="pt-[72px]">{children}</div>
-        {/* <Footer /> */}
-        <ScrollToTop />
       </body>
     </html>
   )
