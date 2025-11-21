@@ -55,7 +55,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>{/* jQuery - Required for flipbook plugin */}</head>
+      <head>
+        {/* jQuery - Required for flipbook plugin */}
+        <link rel="stylesheet" href="/flipbook/css/flipbook.min.css" />
+      </head>
       <body>
         <Header />
         <div className="pt-[72px]">{children}</div>
