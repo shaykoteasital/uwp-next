@@ -72,9 +72,12 @@ export default function Leadership() {
     <div className="py-12 sm:py-14 md:py-16 px-4 sm:px-5">
       <div className="max-w-content mx-auto">
         {/* Section Header */}
-
+        {/* <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-dark-grey mb-6 sm:mb-7 md:mb-8 text-center">
+          Our Team
+        </h3> */}
         <SectionTitle
-          title="Experienced. Committed. Ready to Lead."
+          // title="Experienced. Committed. Ready to Lead."
+          title="Meet The Workers"
           description="Meet the team dedicated to reclaiming our future—leaders with proven
             experience, integrity, and a clear vision for Saint Lucia."
         />
@@ -107,32 +110,28 @@ export default function Leadership() {
         </div>
 
         {/* Team Members - Smaller Grid */}
-        <div>
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-dark-grey mb-6 sm:mb-7 md:mb-8 text-center">
-            Our Team
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
-            {teamMembers.map((member, index) => (
-              <Card key={index}>
-                <div className="text-center">
-                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full overflow-hidden mx-auto mb-3 sm:mb-4 border-2 border-gray-100">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <h4 className="text-xs sm:text-sm md:text-base font-bold text-dark-grey mb-1">
-                    {member.name}
-                  </h4>
-                  <p className="text-xs sm:text-xs md:text-sm text-gray-600">
-                    {member.constituency}
-                  </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+          {teamMembers.map((member, index) => (
+            <Card key={index}>
+              <div className="text-center">
+                <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full overflow-hidden mx-auto mb-3 sm:mb-4 border-2 border-gray-100">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-              </Card>
-            ))}
-          </div>
+                <h4 className="text-xs sm:text-sm md:text-base font-bold text-dark-grey mb-1">
+                  {member.name}
+                </h4>
+                <p className="text-xs sm:text-xs md:text-sm text-gray-600">
+                  {member.constituency}
+                </p>
+              </div>
+            </Card>
+          ))}
         </div>
 
         {/* Bottom Message */}
