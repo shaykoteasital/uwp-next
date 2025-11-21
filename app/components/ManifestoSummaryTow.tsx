@@ -21,7 +21,7 @@ export default function ManifestoSummaryTow() {
                                     </Button>
                                     <div className="w-full group relative 
                                     bg-[#f8f8f8] 
-                                     hover:bg-black/5 h-24 px-2 flex items-center cursor-pointer transition-all duration-300">
+                                     hover:bg-black/90 h-24 px-2 flex items-center cursor-pointer transition-all duration-300">
                                         {/* Title (default state) */}
                                         <span
                                             className="text-lg font-bold text-black mb-0 
@@ -31,7 +31,7 @@ export default function ManifestoSummaryTow() {
                                             {commitment.title}
                                         </span>
                                         <span
-                                            className="absolute shrink-0 line-clamp-2 text-sm text-black opacity-0 translate-y-full transition-all duration-300 ease-in-out group-hover:translate-y-0 group-hover:opacity-100"
+                                            className="absolute shrink-0 line-clamp-2 text-base text-white opacity-0 translate-y-full transition-all duration-300 ease-in-out group-hover:translate-y-0 group-hover:opacity-100"
                                         >
                                             {commitment.description}
                                         </span>
