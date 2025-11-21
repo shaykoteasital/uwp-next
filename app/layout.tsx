@@ -77,7 +77,7 @@ export default function RootLayout({
       <body>
         <Header />
         <div className="pt-[72px]">{children}</div>
-        <Footer />
+        {/* <Footer /> */}
         <ScrollToTop />
       </body>
     </html>
