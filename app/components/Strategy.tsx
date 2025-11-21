@@ -4,6 +4,7 @@ import { useRef, useEffect } from 'react'
 import Card from './ui/Card'
 import { objectives } from '../constant/objectives'
 import SectionTitle from './common/SectionTitle'
+import Button from './ui/Button'
 
 export default function Strategy() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
@@ -12,10 +13,12 @@ export default function Strategy() {
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
       const scrollAmount = scrollContainerRef.current.offsetWidth
-      const newScrollPosition = scrollContainerRef.current.scrollLeft + (direction === 'right' ? scrollAmount : -scrollAmount)
+      const newScrollPosition =
+        scrollContainerRef.current.scrollLeft +
+        (direction === 'right' ? scrollAmount : -scrollAmount)
       scrollContainerRef.current.scrollTo({
         left: newScrollPosition,
-        behavior: 'smooth'
+        behavior: 'smooth',
       })
     }
   }
@@ -29,7 +32,7 @@ export default function Strategy() {
       if (container.scrollLeft >= maxScroll - 10) {
         container.scrollTo({
           left: 0,
-          behavior: 'smooth'
+          behavior: 'smooth',
         })
       } else {
         // Otherwise, scroll to the next slide
@@ -64,17 +67,18 @@ export default function Strategy() {
       autoScrollIntervalRef.current = setInterval(autoScroll, 5000)
     }, 10000)
   }
- 
 
   return (
-    <section id="strategy" className="bg-white py-12 sm:py-14 md:py-16 px-4 sm:px-5 scroll-mt-20">
+    <section
+      id="strategy"
+      className="bg-white py-12 sm:py-14 md:py-16 px-4 sm:px-5 scroll-mt-20"
+    >
       <div className="max-w-content mx-auto">
         {/* Section Header */}
-       
-        <SectionTitle 
-          title='3 Strategic Objectives'
-          description='Our approach is clear, focused, and actionable. These three strategic pillars guide every policy, every decision, and every action we take.'
 
+        <SectionTitle
+          title="3 Strategic Objectives"
+          description="Our approach is clear, focused, and actionable. These three strategic pillars guide every policy, every decision, and every action we take."
         />
 
         {/* Objectives - Slider for Mobile, Grid for Desktop */}
@@ -87,8 +91,18 @@ export default function Strategy() {
               className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-colors"
               aria-label="Previous"
             >
-              <svg className="w-5 h-5 text-uwp-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              <svg
+                className="w-5 h-5 text-uwp-red"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
               </svg>
             </button>
             <button
@@ -96,8 +110,18 @@ export default function Strategy() {
               className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-colors"
               aria-label="Next"
             >
-              <svg className="w-5 h-5 text-uwp-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <svg
+                className="w-5 h-5 text-uwp-red"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </button>
 
@@ -108,7 +132,10 @@ export default function Strategy() {
             >
               <div className="flex gap-0">
                 {objectives.map((objective, index) => (
-                  <div key={index} className="flex-shrink-0 w-full snap-center px-6">
+                  <div
+                    key={index}
+                    className="flex-shrink-0 w-full snap-center px-6"
+                  >
                     <Card hover>
                       <div className="flex flex-col h-full">
                         {/* Number Badge */}
@@ -131,7 +158,9 @@ export default function Strategy() {
                           {objective.points.map((point, idx) => (
                             <li key={idx} className="flex items-start gap-2.5">
                               <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-uwp-red mt-1.5"></span>
-                              <span className="text-sm text-gray-600 leading-relaxed">{point}</span>
+                              <span className="text-sm text-gray-600 leading-relaxed">
+                                {point}
+                              </span>
                             </li>
                           ))}
                         </ul>
@@ -151,19 +180,21 @@ export default function Strategy() {
           </div>
 
           {/* Grid for Desktop */}
-          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
+          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8 ">
             {objectives.map((objective, index) => (
               <Card key={index} hover>
                 <div className="flex flex-col h-full">
                   {/* Number Badge */}
-                  <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-uwp-red text-white text-xl sm:text-2xl font-bold mb-4 sm:mb-5">
-                    {objective.number}
-                  </div>
 
                   {/* Title */}
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-dark-grey mb-3 sm:mb-4 leading-tight">
-                    {objective.title}
-                  </h3>
+                  <div className='flex gap-2'>
+                    <div className="shrink-0 inline-flex items-center justify-center w-14 h-14  rounded-full bg-uwp-red text-white">
+                      {objective.icons}
+                    </div>
+                    <h3 className="text-lg sm:text-xl md:text-xl font-bold text-dark-grey mb-3 sm:mb-4 leading-tight">
+                      {objective.title}
+                    </h3>
+                  </div>
 
                   {/* Description */}
                   <p className="text-sm sm:text-base text-gray-600 mb-5 sm:mb-6 leading-relaxed">
@@ -171,11 +202,16 @@ export default function Strategy() {
                   </p>
 
                   {/* Key Points */}
-                  <ul className="space-y-2.5 sm:space-y-3 mt-auto">
+                  <ul className="space-y-2 sm:space-y-3 mt-auto">
                     {objective.points.map((point, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5 sm:gap-3">
-                        <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-uwp-red mt-1.5 sm:mt-2"></span>
-                        <span className="text-sm text-gray-600 leading-relaxed">{point}</span>
+                      <li
+                        key={idx}
+                        className="flex items-start gap-2.5 sm:gap-3"
+                      >
+                        {/* <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-uwp-red mt-1.5 sm:mt-2"></span> */}
+                        <span className="text-sm text-gray-600 leading-relaxed">
+                          {point}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -188,7 +224,9 @@ export default function Strategy() {
         {/* Call to Action */}
         <div className="text-center mt-10 sm:mt-11 md:mt-12">
           <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-5 sm:mb-6 px-4 sm:px-0">
-            Every commitment in our manifesto aligns with these strategic objectives—ensuring coherent, effective governance that delivers results.
+            Every commitment in our manifesto aligns with these strategic
+            objectives—ensuring coherent, effective governance that delivers
+            results.
           </p>
           <a
             href="#manifesto"
