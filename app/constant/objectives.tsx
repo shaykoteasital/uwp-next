@@ -37,7 +37,8 @@ export const objectives = [
       'Modernize agriculture and agro-processing',
       'Expand digital and creative industries',
       'Develop sustainable tourism',
-      'Invest in education, healthcare, and infrastructure',
+      // 'Invest in education, healthcare, and infrastructure',
+      'Invest in education and healthcare',
     ],
   },
 ]
