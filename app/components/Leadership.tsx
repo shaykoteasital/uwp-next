@@ -1,42 +1,83 @@
 import Image from 'next/image'
 import Card from './ui/Card'
+import SectionTitle from './common/SectionTitle'
 
 export default function Leadership() {
   const leaders = [
     {
-      name: 'Allen Chastanet',
+      name: 'Hon. Allen M. Chastanet',
       role: 'Political Leader',
-      image: '/images/leader-placeholder.svg',
+      image: '/assets/images/team/allen-chastanet.jpg',
       bio: 'Proven leadership with a track record of delivering results for Saint Lucia.',
     },
     {
-      name: 'Hon. [Deputy Leader Name]',
-      role: 'Deputy Political Leader',
-      image: '/images/leader-placeholder.svg',
+      name: 'Guy Joseph',
+      role: '1st deputy political leader',
+      image: '/assets/images/team/guy-joseph.jpg',
+      bio: 'Committed to public service and advancing the UWP vision for Saint Lucia.',
+    },
+    {
+      name: 'Dominic Fedee',
+      role: '2nd deputy political leader',
+      image: '/assets/images/team/dominic-fedee.jpg',
+      bio: 'Committed to public service and advancing the UWP vision for Saint Lucia.',
+    },
+    {
+      name: 'Angelina ‘Phera’ Polius',
+      role: '1st Deputy Chairperson',
+      image: '/assets/images/team/angelina.jpg',
       bio: 'Committed to public service and advancing the UWP vision for Saint Lucia.',
     },
   ]
 
   const teamMembers = [
-    { name: 'Team Member 1', constituency: 'Constituency', image: '/images/team-member-placeholder.svg' },
-    { name: 'Team Member 2', constituency: 'Constituency', image: '/images/team-member-placeholder.svg' },
-    { name: 'Team Member 3', constituency: 'Constituency', image: '/images/team-member-placeholder.svg' },
-    { name: 'Team Member 4', constituency: 'Constituency', image: '/images/team-member-placeholder.svg' },
+    {
+      name: 'Jeannine Giraudy-McIntyre',
+      constituency: 'General Secretary',
+      image: '/assets/images/team/jeannine.jpg',
+    },
+    {
+      name: 'Therold Prudent',
+      constituency: 'Chairman',
+      image: '/assets/images/team/therold.jpg',
+    },
+    {
+      name: 'Tassa Jean',
+      constituency: 'Constituency',
+      image: '/assets/images/team/tassa.jpg',
+    },
+    {
+      name: 'Marcella Johnson',
+      constituency: 'Treasurer',
+      image: '/assets/images/team/marcella.jpg',
+    },
+    {
+      name: 'Nancy Charles',
+      constituency: 'Mobilization Officer',
+      image: '/assets/images/team/nancy.webp',
+    },
+    {
+      name: 'Mary I. Isaac',
+      constituency: '2nd Deputy Chairperson',
+      image: '/assets/images/team/mary.jpg',
+    },
+    {
+      name: 'Beryl George',
+      constituency: 'Election Officer',
+      image: '/assets/images/team/beryl.jpg',
+    },
   ]
 
   return (
     <div className="py-12 sm:py-14 md:py-16 px-4 sm:px-5">
       <div className="max-w-content mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-10 sm:mb-11 md:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-dark-grey mb-4 sm:mb-5 md:mb-6 relative inline-block pb-3 sm:pb-4 px-4 sm:px-0">
-            Experienced. Committed. Ready to Lead.
-            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-uwp-red rounded"></span>
-          </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-[900px] mx-auto leading-relaxed px-4 sm:px-0">
-            Meet the team dedicated to reclaiming our future—leaders with proven experience, integrity, and a clear vision for Saint Lucia.
-          </p>
-        </div>
+
+        <SectionTitle
+          title="Experienced. Committed. Ready to Lead."
+          description="Meet the team dedicated to reclaiming our future—leaders with proven
+            experience, integrity, and a clear vision for Saint Lucia."
+        />
 
         {/* Key Leaders - Large Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mb-12 sm:mb-14 md:mb-16">
@@ -100,7 +141,8 @@ export default function Leadership() {
             A Team United for Saint Lucia
           </h3>
           <p className="text-sm sm:text-base text-gray-600 max-w-[700px] mx-auto leading-relaxed px-4 sm:px-0">
-            With experience, integrity, and dedication, our leadership team is ready to deliver the change Saint Lucia needs and deserves.
+            With experience, integrity, and dedication, our leadership team is
+            ready to deliver the change Saint Lucia needs and deserves.
           </p>
         </div>
       </div>
