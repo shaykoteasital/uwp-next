@@ -83,7 +83,7 @@ export default function Leadership() {
         />
 
         {/* Key Leaders - Large Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mb-12 sm:mb-14 md:mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2  gap-6 sm:gap-8 md:gap-12 mb-12 sm:mb-14 md:mb-16">
           {leaders.map((leader, index) => (
             <Card key={index} hover>
               <div className="flex flex-col items-center text-center">
