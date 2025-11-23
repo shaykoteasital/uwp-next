@@ -9,6 +9,7 @@ import Leadership from './components/Leadership'
 import CTA from './components/CTA'
 import Section from './components/ui/Section'
 import ManifestoSummaryTow from './components/ManifestoSummaryTow'
+import UwpGallery from './components/UwpGallary'
 
 export default function Home() {
   return (
@@ -44,8 +45,10 @@ export default function Home() {
         <Leadership />
       </Section>
 
+    <UwpGallery/>
       {/* Call to Action - Get Involved */}
       <CTA />
+
     </main>
   )
 }
